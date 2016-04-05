@@ -22,12 +22,14 @@
                 android:gravity="center"
                 android:text="What type of Structure is it?"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="15dp" />
+                android:textSize="18dp" />
 
             <Spinner
                 android:padding="8dp"
                 android:id="@+id/type"
-                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"></Spinner>
 
             <TextView
@@ -36,12 +38,14 @@
                 android:gravity="center"
                 android:text="What is the Structure made of?"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="15dp" />
+                android:textSize="18dp" />
 
             <Spinner
                 android:padding="8dp"
                 android:id="@+id/material"
-                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"></Spinner>
             <TextView
                 android:layout_width="match_parent"
@@ -49,12 +53,14 @@
                 android:gravity="center"
                 android:text="What is the size of the structure?"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="15dp" />
+                android:textSize="18dp" />
 
             <Spinner
                 android:padding="8dp"
                 android:id="@+id/size"
-                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"></Spinner>
             <TextView
                 android:layout_width="match_parent"
@@ -62,12 +68,14 @@
                 android:gravity="center"
                 android:text="Where was the blast probably located??"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="15dp" />
+                android:textSize="18dp" />
 
             <Spinner
                 android:padding="8dp"
                 android:id="@+id/location"
-                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"></Spinner>
             <TextView
                 android:layout_width="match_parent"
@@ -75,12 +83,14 @@
                 android:gravity="center"
                 android:text="What is the length of the side of the structure closest to you?"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="15dp" />
+                android:textSize="18dp" />
 
             <Spinner
                 android:padding="8dp"
                 android:id="@+id/length"
-                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"></Spinner>
             <TextView
                 android:layout_width="match_parent"
@@ -88,12 +98,14 @@
                 android:gravity="center"
                 android:text="Where was the blast probably located on that floor?"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="15dp" />
+                android:textSize="18dp" />
 
             <Spinner
                 android:padding="8dp"
                 android:id="@+id/floor_location"
-                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"></Spinner>
             <TextView
                 android:layout_width="match_parent"
@@ -101,12 +113,14 @@
                 android:gravity="center"
                 android:text="How many collumns were significantly damaged/removed from the blast?"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="15dp" />
+                android:textSize="18dp" />
 
             <Spinner
                 android:padding="8dp"
                 android:id="@+id/columns"
-                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"></Spinner>
             <TextView
                 android:layout_width="match_parent"
@@ -114,12 +128,14 @@
                 android:gravity="center"
                 android:text="How many peole are likely to need medical attention?"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="15dp" />
+                android:textSize="18dp" />
 
             <Spinner
                 android:padding="8dp"
                 android:id="@+id/peoples"
-                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"></Spinner>
         </LinearLayout>
     </ScrollView>

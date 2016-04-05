@@ -19,6 +19,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
 
     private Context context;
     private ArrayList<String> imagePaths;
+    private ViewSelectedImageInterface viewSelectedImageInterface;
 
     public PhotoAdapter() {
         context = null;
@@ -26,9 +27,10 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
     }
 
 
-    public PhotoAdapter(Context context, ArrayList<String> imagePaths) {
+    public PhotoAdapter(Context context, ArrayList<String> imagePaths, ViewSelectedImageInterface viewSelectedImageInterface) {
         this.context = context;
         this.imagePaths = imagePaths;
+        this.viewSelectedImageInterface = viewSelectedImageInterface;
     }
 
     public Context getContext() {
@@ -59,14 +61,24 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
     }
 
     @Override
-    public void onBindViewHolder(PhotoViewHolder photoViewHolder, final int i) {
+    public void onBindViewHolder(final PhotoViewHolder photoViewHolder, int i) {
         final String imagePath = imagePaths.get(i);
-        photoViewHolder.photo.setImageBitmap(BitmapFactory.decodeFile(imagePath));
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inSampleSize = 10;
+        options.inJustDecodeBounds = false;
+        photoViewHolder.photo.setImageBitmap(BitmapFactory.decodeFile(imagePath, options));
         photoViewHolder.imagePath.setText(imagePath);
+        photoViewHolder.photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewSelectedImageInterface.viewImage(imagePath);
+            }
+        });
         photoViewHolder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imagePaths.remove(i);
+                int index = photoViewHolder.getAdapterPosition();
+                imagePaths.remove(index);
                 PhotoAdapter.this.notifyDataSetChanged();
             }
         });
@@ -89,5 +101,9 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
             photo = (ImageView) itemLayoutView.findViewById(R.id.photo);
             delete = (Button) itemLayoutView.findViewById(R.id.delete);
         }
+    }
+
+    public interface ViewSelectedImageInterface{
+        public void viewImage(String path);
     }
 }

@@ -4,27 +4,39 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/photos"
+    <ImageView
+        android:id="@+id/image_review"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
-
-    <Button
-        android:id="@+id/take_picture"
+    <LinearLayout
+        android:id="@+id/holder"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/button_selectpic"
-        android:background="@android:color/holo_orange_light"
-        android:text="Take photo" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/uploadButton"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:background="@android:color/holo_orange_light"
-        android:text="upload" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/photos"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
+
+        <Button
+            android:id="@+id/take_picture"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/button_selectpic"
+            android:background="@android:color/holo_orange_light"
+            android:text="Take photo" />
+
+        <Button
+            android:id="@+id/uploadButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/holo_orange_light"
+            android:text="upload" />
+    </LinearLayout>
 </LinearLayout>

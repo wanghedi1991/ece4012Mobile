@@ -19,6 +19,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.io.File;
@@ -34,7 +36,9 @@ public class TempMultiImageActicity extends AppCompatActivity {
     private String imageName = "";
     private Uri fileUri;
     private RecyclerView mRecyclerView;
+    private ImageView imageReview;
     private PhotoAdapter mAdapter;
+    private LinearLayout holder;
     private RecyclerView.LayoutManager mLayoutManager;
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
     public static final int MEDIA_TYPE_IMAGE = 1;
@@ -45,17 +49,32 @@ public class TempMultiImageActicity extends AppCompatActivity {
         takePhotoButton = (Button) findViewById(R.id.take_picture);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.photos);
-
+        holder = (LinearLayout) findViewById(R.id.holder);
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
-
+        imageReview = (ImageView) findViewById(R.id.image_review);
+        imageReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.setVisibility(View.VISIBLE);
+                imageReview.setVisibility(View.GONE);
+                imageReview.setImageBitmap(null);
+            }
+        });
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new PhotoAdapter(this,new ArrayList<String>());
+        mAdapter = new PhotoAdapter(this, new ArrayList<String>(), new PhotoAdapter.ViewSelectedImageInterface() {
+            @Override
+            public void viewImage(String path) {
+                imageReview.setImageBitmap(BitmapFactory.decodeFile(path));
+                imageReview.setVisibility(View.VISIBLE);
+                holder.setVisibility(View.GONE);
+            }
+        });
         mRecyclerView.setAdapter(mAdapter);
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.READ_EXTERNAL_STORAGE)
