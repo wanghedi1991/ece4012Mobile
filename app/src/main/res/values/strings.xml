@@ -6,4 +6,85 @@
     <string name="create_report">Send a report</string>
     <string name="title_activity_view_report">ViewReport</string>
     <string name="title_activity_survey">SurveyActivity</string>
+    <string name="title_activity_temp_multi_image_acticity">TempMultiImageActicity</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string-array name="structure_type">
+        <item>Office</item>
+        <item>School</item>
+        <item>Residential</item>
+        <item>Hospital</item>
+        <item>Library</item>
+        <item>Storage</item>
+        <item>Manufacturing</item>
+        <item>Stores</item>
+        <item>Hotel</item>
+        <item>Not Sure/Other</item>
+    </string-array>
+
+    <string-array name="structure_material">
+        <item>Wood Framing</item>
+        <item>Concrete Columns</item>
+        <item>Steel Framing</item>
+    </string-array>
+
+    <string-array name="size_of_structure">
+        <item>1 Story</item>
+        <item>2 Stories</item>
+        <item>3 Stories</item>
+        <item>4 Stories</item>
+        <item>5 Stories</item>
+        <item>6 Stories</item>
+        <item>7 Stories</item>
+        <item>8 Stories</item>
+        <item>9 Stories</item>
+        <item>10 Stories</item>
+    </string-array>
+
+    <string-array name="blast_story">
+        <item>1st Story</item>
+        <item>2nd Story</item>
+        <item>3rd Story</item>
+        <item>4th Story</item>
+        <item>5th Story</item>
+        <item>6th Story</item>
+        <item>7th Story</item>
+        <item>8th Story</item>
+        <item>9th Story</item>
+        <item>10th Story</item>
+    </string-array>
+
+    <string-array name="length_of_side">
+        <item>&lt;~100ft</item>
+        <item>~125ft</item>
+        <item>~150ft</item>
+        <item>~175ft</item>
+        <item>~200ft</item>
+        <item>~225ft</item>
+        <item>&gt;~250ft</item>
+    </string-array>
+
+    <string-array name="blast_on_floor">
+        <item>Interior</item>
+        <item>Near the side</item>
+        <item>Near the corner</item>
+    </string-array>
+
+    <string-array name="columns">
+        <item>No Columns</item>
+        <item>1 Column</item>
+        <item>2 Columns</item>
+        <item>3 Columns</item>
+        <item>4+ Columns</item>
+    </string-array>
+
+    <string-array name="people_count">
+        <item>&lt;5</item>
+        <item>&lt;15</item>
+        <item>&lt;30</item>
+        <item>&lt;50</item>
+        <item>&lt;75</item>
+        <item>&gt;75</item>
+    </string-array>
 </resources>

@@ -88,7 +88,6 @@ public class MainActivity extends Activity implements OnClickListener, SensorEve
         uploadButton = (Button) findViewById(R.id.uploadButton);
         messageText = (TextView) findViewById(R.id.messageText);
         btnselectpic = (Button) findViewById(R.id.button_selectpic);
-        btnselectpic = (Button) findViewById(R.id.button_selectpic);
         takePhotoButton = (Button) findViewById(R.id.take_picture);
         imageview = (ImageView) findViewById(R.id.imageView_pic);
 
