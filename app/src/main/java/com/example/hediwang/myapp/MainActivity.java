@@ -80,6 +80,9 @@ public class MainActivity extends Activity implements OnClickListener, SensorEve
     private SensorManager mSensorManager;
     private Sensor mSensor;
     float x, y, z;
+
+    public static final String IS_REPORT = "ISREPORT";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -98,7 +101,12 @@ public class MainActivity extends Activity implements OnClickListener, SensorEve
         btnselectpic.setOnClickListener(this);
         uploadButton.setOnClickListener(this);
         takePhotoButton.setOnClickListener(this);
-        upLoadServerUri = "https://lit-lake-49399.herokuapp.com/index.php";
+        Intent intent = getIntent();
+        if (intent.getBooleanExtra(IS_REPORT, true)) {
+            upLoadServerUri = "https://lit-lake-49399.herokuapp.com/report.php";
+        } else {
+            upLoadServerUri = "https://lit-lake-49399.herokuapp.com/estimate.php";
+        }
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
@@ -124,11 +132,21 @@ public class MainActivity extends Activity implements OnClickListener, SensorEve
                     1);
         }
 
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.INTERNET)
+                != PackageManager.PERMISSION_GRANTED) {
+
+
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.INTERNET},
+                    1);
+        }
+
         x = 0f;
         y = 0f;
         z = 0f;
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY);
+        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
     }
 
     @Override

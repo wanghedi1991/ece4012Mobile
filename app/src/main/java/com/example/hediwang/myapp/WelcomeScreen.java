@@ -20,6 +20,7 @@ public class WelcomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(WelcomeScreen.this, MainActivity.class);
+                intent.putExtra(MainActivity.IS_REPORT, true);
                 startActivity(intent);
             }
         });
@@ -27,6 +28,7 @@ public class WelcomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(WelcomeScreen.this, MainActivity.class);
+                intent.putExtra(MainActivity.IS_REPORT, false);
                 startActivity(intent);
             }
         });
